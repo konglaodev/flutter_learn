@@ -24,6 +24,16 @@ class _MyHomePageState extends State<MyHomePage> {
   int number = 0;
   @override
   Widget build(BuildContext context) {
+    List<Widget> data = [];
+    data.add(Text(" buk kak"));
+    data.add(Text(" you know "));
+    data.add(Text(
+      number.toString(),
+      style: TextStyle(fontSize: 60),
+    ));
+    for (var i = 0; i < 10; i++) {
+      data.add(Text("data from loop"));
+    }
     return Scaffold(
       appBar: AppBar(
         title: const Text("count number app"),
@@ -31,13 +41,7 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Center(
           child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Text("ກົດປຸ່ມເພີ່ມຈຳນວນ"),
-          Text(
-            number.toString(),
-            style: TextStyle(fontSize: 60),
-          ),
-        ],
+        children: data,
       )),
       floatingActionButton: FloatingActionButton(
         onPressed: addNumber,
