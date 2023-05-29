@@ -22,38 +22,31 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int number = 0;
+  //display data
   @override
   Widget build(BuildContext context) {
-    // group data text widget
-    List<Widget> data = [];
-    data.add(Text(" buk kak"));
-    data.add(Text(" you know "));
-    data.add(Text(
-      number.toString(),
-      style: TextStyle(fontSize: 60),
-    ));
-    for (var i = 0; i < 10; i++) {
-      data.add(Text("data from loop ${i+1}"));
-    }
     return Scaffold(
       appBar: AppBar(
-        title: const Text("count number app"),
+        title: const Text("select menu"),
       ),
       body: Center(
-          child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: data,
+          child: ListView(
+        children: getData(15),
       )),
-      floatingActionButton: FloatingActionButton(
-        onPressed: addNumber,
-        child: Icon(Icons.add),
-      ),
     );
   }
 
-  void addNumber() {
-    setState(() {
-      number++;
-    });
+// function ກຽມຂໍ້ມູນ
+  List<Widget> getData(int count) {
+    // group data text widget
+    List<Widget> data = [];
+
+    for (var i = 0; i < count; i++) {
+      data.add(Text(
+        "data from loop ${i + 1}",
+        style: TextStyle(fontSize: 20),
+      ));
+    }
+    return data;
   }
 }
