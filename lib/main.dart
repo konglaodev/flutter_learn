@@ -24,6 +24,7 @@ class _MyHomePageState extends State<MyHomePage> {
   int number = 0;
   @override
   Widget build(BuildContext context) {
+    // group data text widget
     List<Widget> data = [];
     data.add(Text(" buk kak"));
     data.add(Text(" you know "));
@@ -32,7 +33,7 @@ class _MyHomePageState extends State<MyHomePage> {
       style: TextStyle(fontSize: 60),
     ));
     for (var i = 0; i < 10; i++) {
-      data.add(Text("data from loop"));
+      data.add(Text("data from loop ${i+1}"));
     }
     return Scaffold(
       appBar: AppBar(
