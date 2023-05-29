@@ -27,7 +27,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("select menu"),
+        title: const Text("ເລືອກເມນູ"),
       ),
       body: Center(
           child: ListView(
@@ -42,10 +42,16 @@ class _MyHomePageState extends State<MyHomePage> {
     List<Widget> data = [];
 
     for (var i = 0; i < count; i++) {
-      data.add(Text(
-        "data from loop ${i + 1}",
-        style: TextStyle(fontSize: 20),
-      ));
+      var menu = ListTile(
+        title: Text(
+          "ເມນູທີ່ ${i + 1}",
+        ),
+        subtitle: Text(
+          "ຫົວຂໍ້ຍ່ອຍ",
+          style: TextStyle(fontSize: 15),
+        ),
+      );
+      data.add(menu);
     }
     return data;
   }
